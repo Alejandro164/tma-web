@@ -1,0 +1,27 @@
+:root {
+    /* Brand Colors for ITEK TMA */
+    --c-primary: #343A9A;     /* Azul Profundo (Dominante, corporativo) */
+    --c-secondary: #1FA8DB;   /* Azul Turquesa (Botones sec, íconos tech) */
+    --c-accent: #E98F37;      /* Naranja (CTA principal) */
+    --c-highlight: #C4D34D;   /* Verde Lima (Sostenibilidad, acentos sutiles) */
+    --c-light-bg: #7CBEDE;    /* Celeste claro (Fondos suaves, divisores) */
+    
+    /* Neutrals */
+    --c-white: #FFFFFF;
+    --c-gray-50: #F8F9FA;
+    --c-gray-100: #E9ECEF;
+    --c-gray-200: #DEE2E6;
+    --c-text-dark: #212529;   /* Lectura principal seria */
+    --c-text-muted: #6C757D;  /* Párrafos descriptivos */
+    
+    /* Typography */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    
+    /* Shadow & Transitions */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.06);
+    --shadow-lg: 0 15px 35px rgba(0,0,0,0.08);
+    
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+}

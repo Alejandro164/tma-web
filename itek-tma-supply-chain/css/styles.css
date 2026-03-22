@@ -1,0 +1,147 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--c-text-dark);
+    background-color: var(--c-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Layout Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.bg-gray {
+    background-color: var(--c-gray-50);
+}
+
+.bg-primary {
+    background-color: var(--c-primary);
+    color: var(--c-white);
+}
+
+.bg-light-blue {
+    background-color: rgba(124, 190, 222, 0.08); /* Uso sutil del Celeste Claro */
+}
+
+/* Typography Utilities */
+.section-title {
+    font-size: 2.5rem;
+    color: var(--c-primary);
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.section-title span {
+    color: var(--c-secondary);
+}
+
+.section-title.white {
+    color: var(--c-white);
+}
+.section-title.white span {
+    color: var(--c-highlight); /* Contraste verde lima en fondos oscuros */
+}
+
+.section-desc {
+    font-size: 1.125rem;
+    color: var(--c-text-muted);
+    max-width: 800px;
+    margin-bottom: 48px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-base);
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.btn-accent {
+    background-color: var(--c-accent);
+    color: var(--c-white);
+    border-color: var(--c-accent);
+}
+
+.btn-accent:hover {
+    background-color: transparent;
+    color: var(--c-accent);
+}
+
+.btn-secondary {
+    background-color: var(--c-secondary);
+    color: var(--c-white);
+    border-color: var(--c-secondary);
+}
+
+.btn-secondary:hover {
+    background-color: transparent;
+    color: var(--c-secondary);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--c-primary);
+    border-color: var(--c-primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--c-primary);
+    color: var(--c-white);
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 60px 0;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Scroll Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal.delay-1 { transition-delay: 0.1s; }
+.reveal.delay-2 { transition-delay: 0.2s; }
+.reveal.delay-3 { transition-delay: 0.3s; }
+.reveal.delay-4 { transition-delay: 0.4s; }

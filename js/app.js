@@ -44,6 +44,30 @@ async function loadModules() {
                             img.setAttribute('src', basePath + src);
                         }
                     });
+
+                    // Mobile Menu Toggle Logic
+                    if (mod.name === 'navbar') {
+                        const toggleBtn = container.querySelector('.mobile-menu-toggle');
+                        const navLinksContainer = container.querySelector('nav');
+                        
+                        if (toggleBtn && navLinksContainer) {
+                            toggleBtn.addEventListener('click', () => {
+                                const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+                                toggleBtn.setAttribute('aria-expanded', !isExpanded);
+                                toggleBtn.classList.toggle('is-active');
+                                navLinksContainer.classList.toggle('is-open');
+                            });
+
+                            const navLinks = navLinksContainer.querySelectorAll('a');
+                            navLinks.forEach(link => {
+                                link.addEventListener('click', () => {
+                                    toggleBtn.classList.remove('is-active');
+                                    navLinksContainer.classList.remove('is-open');
+                                    toggleBtn.setAttribute('aria-expanded', 'false');
+                                });
+                            });
+                        }
+                    }
                 }
             } else {
                 console.error(`Error loading module: ${mod.name}`);

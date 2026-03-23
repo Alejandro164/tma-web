@@ -131,6 +131,19 @@ body {
     }
 }
 
+@media (max-width: 480px) {
+    .section-padding {
+        padding: 40px 0;
+    }
+    .section-title {
+        font-size: 1.75rem;
+    }
+    .section-desc {
+        font-size: 1rem;
+        margin-bottom: 32px;
+    }
+}
+
 /* Scroll Animations */
 .reveal {
     opacity: 0;

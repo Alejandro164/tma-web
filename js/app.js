@@ -1,26 +1,49 @@
 // Modules to load sequentially to maintain DOM order
 const modules = [
     { name: 'navbar', type: 'shared' },
-    { name: 'hero', type: 'sections' },
-    { name: 'about', type: 'sections' },
-    { name: 'solutions', type: 'sections' },
-    { name: 'industries', type: 'sections' },
-    { name: 'costarica', type: 'sections' },
-    { name: 'traceability', type: 'sections' },
-    { name: 'trust', type: 'sections' },
-    { name: 'contact', type: 'sections' },
     { name: 'footer', type: 'shared' }
 ];
 
 async function loadModules() {
+    const isInsidePages = window.location.pathname.includes('/pages/');
+    const basePath = isInsidePages ? '../' : './';
+
     for (const mod of modules) {
         try {
-            const response = await fetch(`${mod.type}/${mod.name}.html`);
+            const response = await fetch(`${basePath}${mod.type}/${mod.name}.html`);
             if (response.ok) {
                 const html = await response.text();
                 const container = document.getElementById(`${mod.name}-module`);
                 if (container) {
                     container.innerHTML = html;
+
+                    // Rewrite links inside the loaded module
+                    const links = container.querySelectorAll('a');
+                    links.forEach(link => {
+                        const href = link.getAttribute('href');
+                        if (!href || href.startsWith('http') || href.startsWith('#')) return;
+                        
+                        if (isInsidePages) {
+                            if (href === 'index.html') {
+                                link.setAttribute('href', '../index.html');
+                            } else if (!href.includes('/')) {
+                                link.setAttribute('href', href); 
+                            }
+                        } else {
+                            if (href !== 'index.html' && !href.includes('/')) {
+                                link.setAttribute('href', 'pages/' + href);
+                            }
+                        }
+                    });
+
+                    // Rewrite image srcs in the module
+                    const imgs = container.querySelectorAll('img');
+                    imgs.forEach(img => {
+                        const src = img.getAttribute('src');
+                        if (src && !src.startsWith('http') && !src.startsWith('data:')) {
+                            img.setAttribute('src', basePath + src);
+                        }
+                    });
                 }
             } else {
                 console.error(`Error loading module: ${mod.name}`);

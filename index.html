@@ -67,14 +67,34 @@
     <!-- Injected Components -->
     <div id="navbar-module"></div>
     <main>
-        <div id="hero-module"></div>
-        <div id="about-module"></div>
-        <div id="solutions-module"></div>
-        <div id="industries-module"></div>
-        <div id="costarica-module"></div>
-        <div id="traceability-module"></div>
-        <div id="trust-module"></div>
-        <div id="contact-module"></div>
+        <section id="hero" class="hero section-padding">
+            <div class="hero-overlay"></div>
+            <div class="container relative z-10">
+                <div class="hero-content">
+                    <h1 data-i18n="hero_title" class="fade-in">Supply Chain Integration for High-Value Manufacturing</h1>
+                    <p data-i18n="hero_desc" class="fade-in delayed-1 mt-40">Abastecimiento, logística, inventarios y trazabilidad integrados para operaciones que no pueden fallar.</p>
+                    <div class="hero-actions" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="pages/contact.html" class="btn btn-accent btn-lg fade-in delayed-2 mt-40" data-i18n="hero_cta">Agende una reunión</a>
+                        <a href="solutions.html" class="btn btn-outline btn-lg fade-in delayed-3 mt-40" data-i18n="hero_cta_2" style="color: var(--c-white); border-color: rgba(255,255,255,0.4);">Explore nuestras soluciones</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-stats fade-in delayed-3">
+                <div class="stat-item">
+                    <svg viewBox="0 0 24 24" fill="none" class="stat-icon" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span>Trazabilidad 100% End-to-End</span>
+                </div>
+                <div class="stat-item">
+                    <svg viewBox="0 0 24 24" fill="none" class="stat-icon" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>Continuidad de Negocio Garantizada</span>
+                </div>
+                <div class="stat-item">
+                    <svg viewBox="0 0 24 24" fill="none" class="stat-icon" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    <span>Mitigación de Riesgos Aduaneros</span>
+                </div>
+            </div>
+        </section>
     </main>
     <div id="footer-module"></div>
 

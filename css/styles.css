@@ -78,14 +78,15 @@ body {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 16px 32px;
-    border-radius: 4px;
+    padding: 14px 32px;
+    border-radius: 30px;
     font-weight: 600;
     text-decoration: none;
     transition: all var(--transition-base);
     cursor: pointer;
     border: 2px solid transparent;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .btn-accent {
@@ -95,8 +96,11 @@ body {
 }
 
 .btn-accent:hover {
-    background-color: transparent;
-    color: var(--c-accent);
+    background-color: #fca048;
+    border-color: #fca048;
+    color: var(--c-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(233, 143, 55, 0.4);
 }
 
 .btn-secondary {
@@ -106,8 +110,11 @@ body {
 }
 
 .btn-secondary:hover {
-    background-color: transparent;
-    color: var(--c-secondary);
+    background-color: #2bc1f6;
+    border-color: #2bc1f6;
+    color: var(--c-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(31, 168, 219, 0.4);
 }
 
 .btn-outline {
@@ -119,6 +126,8 @@ body {
 .btn-outline:hover {
     background-color: var(--c-primary);
     color: var(--c-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(52, 58, 154, 0.3);
 }
 
 /* Responsive Utilities */

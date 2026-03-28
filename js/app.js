@@ -10,7 +10,9 @@ async function loadModules() {
 
     for (const mod of modules) {
         try {
-            const response = await fetch(`${basePath}${mod.type}/${mod.name}.html`);
+            // Se le agrega "?v=..." para evitar caché en el navegador
+            const cacheBuster = '?v=' + new Date().getTime();
+            const response = await fetch(`${basePath}${mod.type}/${mod.name}.html${cacheBuster}`);
             if (response.ok) {
                 const html = await response.text();
                 const container = document.getElementById(`${mod.name}-module`);
@@ -21,7 +23,7 @@ async function loadModules() {
                     const links = container.querySelectorAll('a');
                     links.forEach(link => {
                         const href = link.getAttribute('href');
-                        if (!href || href.startsWith('http') || href.startsWith('#')) return;
+                        if (!href || href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
                         
                         if (isInsidePages) {
                             if (href === 'index.html') {

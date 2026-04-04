@@ -5,12 +5,21 @@
     box-sizing: border-box;
 }
 
+img, svg, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 body {
     font-family: var(--font-sans);
     color: var(--c-text-dark);
     background-color: var(--c-white);
     line-height: 1.6;
-    overflow-x: hidden;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
 }
@@ -141,6 +150,9 @@ body {
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
     .section-padding {
         padding: 40px 0;
     }
